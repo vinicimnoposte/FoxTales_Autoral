@@ -4,21 +4,22 @@ using UnityEngine;
 
 public class ItemGrab : MonoBehaviour
 {
-    public GameObject item;
-    public GameObject item2s;
-    public GameObject item3s;
-    public GameObject itemCena;
-    public GameObject itemCena2s;
-    public GameObject itemCena3s;
+    public GameObject item; // itens na HUD
+    public GameObject item2s; // itens na HUD
+    public GameObject item3s; // itens na HUD
+    public GameObject itemCena; //itens na cena
+    public GameObject itemCena2s; //itens na cena
+    public GameObject itemCena3s; //itens na cena
+
     public int qualItem = 0;
     public int itemHud = 0;
 
-    public bool isItem = true;
-    public bool isItem2 = false;
-    public bool isItem3 = false;
-    public bool item1;
-    public bool item2;
-    public bool item3;
+    public bool isItem = true;      // verifica se itens cena e hud sao verdadeiros ou nao
+    public bool isItem2 = false;    // verifica se itens cena e hud sao verdadeiros ou nao
+    public bool isItem3 = false;    // verifica se itens cena e hud sao verdadeiros ou nao
+    public bool item1;              // verifica se itens cena e hud sao verdadeiros ou nao
+    public bool item2;              // verifica se itens cena e hud sao verdadeiros ou nao
+    public bool item3;              // verifica se itens cena e hud sao verdadeiros ou nao
 
 
 
@@ -29,15 +30,18 @@ public class ItemGrab : MonoBehaviour
     }
     public void OnTriggerStay(Collider other)
     {
-        if (Input.GetKeyUp("e") && other.CompareTag("itene"))
+        if (Input.GetKeyUp("e") && other.CompareTag("itene")) // verifica se o jogador apertou o botao de usar perto do item
         {
 
-            if (other.GetComponent<ItemBeahvior>())
+            if (other.GetComponent<ItemBeahvior>()) // verifica quantos itens o jogador pegou e em qual dos itens ele esta atualmente, pois um item so pode ser coletado apos o outro em ordem sequencial
             {
-                other.GetComponent<ItemBeahvior>().DoSomething();
+                other.GetComponent<ItemBeahvior>().DoSomething();  
 
             }
-
+            if (other.GetComponent<Chave>()) //se ele encontra algum o  objeto com o script chave...
+            {
+                other.GetComponent<Chave>().AtivaDiario();//ate qual pagina voce pode ler
+            }
 
                
         }
@@ -45,7 +49,7 @@ public class ItemGrab : MonoBehaviour
 
     public void HUD()
     {
-        switch (itemHud)
+        switch (itemHud) //ativa os itens pegos na HUD dependendo do item que o jogador pegou
         {
             case 0:
 
@@ -68,7 +72,7 @@ public class ItemGrab : MonoBehaviour
 
     }
 
-    public void AtivaProximoItem()
+    public void AtivaProximoItem() //conta em qual item o jogador esta
     {
         qualItem = qualItem + 1;
 

@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
 
+    
     public float speed = 12f;
     public float gravity = -9.81f;
 
@@ -19,12 +20,14 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
     void Update()
     {
+
+
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if(isGrounded && velocity.y < 0) //checa se esta no chao e se a velocidade e 0, reescreve a velocidade para forcar o player a estar no chao
