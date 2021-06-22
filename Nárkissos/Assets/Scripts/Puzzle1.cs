@@ -9,6 +9,7 @@ public class Puzzle1 : MonoBehaviour
     public GameObject item1;
     public GameObject item2;
     public GameObject manequim;
+    public GameObject chave;
 
 
     public bool isToy = false;
@@ -33,21 +34,12 @@ public class Puzzle1 : MonoBehaviour
         {
             item2HUD = true;
         }
-        if (isToy == false && itemHUD == true && Input.GetKeyDown("e"))
-        {
-            toy.SetActive(true);
-            isToy = true;
-            item1.SetActive(false);
-        }
-        if (isBulb == false && item2HUD == true && Input.GetKeyDown("e"))
-        {
-            bulb.SetActive(true);
-            isBulb = true;
-            item2.SetActive(false);
-        }
+        if (isToy == false)
+            chave.SetActive(false);
     }
     public void OnTriggerStay(Collider other)
     {
+
         if (isToy == false && itemHUD == true && Input.GetKeyDown("e"))
         {
             toy.SetActive(true);
@@ -60,6 +52,7 @@ public class Puzzle1 : MonoBehaviour
             item2.SetActive(false);
             isBulb = true;
             manequim.SetActive(true);
+            chave.SetActive(true);
         }
     }
    

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Chave : MonoBehaviour
 {
+    public GameObject chaveHUD;
     public GameObject CanvasMenu;
     // Start is called before the first frame update
     void Start()
@@ -13,9 +14,9 @@ public class Chave : MonoBehaviour
 
     public void AtivaDiario()
     {
-
         CanvasMenu.GetComponent<Diary>().Permitido++; //ate qual pagina do diario voce pode ler
         Destroy(gameObject);
+        chaveHUD.SetActive(true);
 
     }
        
