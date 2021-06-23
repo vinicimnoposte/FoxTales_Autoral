@@ -15,14 +15,18 @@ public class DoorBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(chave.activeSelf == true && Input.GetKeyDown(KeyCode.E))
+
+        
+    }
+    public void OnTriggerStay(Collider other)
+    {
+        if (chave.activeSelf == true && Input.GetKeyDown(KeyCode.E))
         {
             porta.SetActive(false);
         }
-        if(porta.activeSelf == false && chave.activeSelf == true)
+        if (porta.activeSelf == false && chave.activeSelf == true)
         {
             chave.SetActive(false);
         }
-        
     }
 }

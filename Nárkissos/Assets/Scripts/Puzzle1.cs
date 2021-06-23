@@ -10,8 +10,13 @@ public class Puzzle1 : MonoBehaviour
     public GameObject item2;
     public GameObject manequim;
     public GameObject chave;
+    public GameObject gavetaAberta;
+    public GameObject gavetaFechada;
+    public GameObject lanternaGaveta;
+    public GameObject lanternaMao;
+    public GameObject luzesCasa;
 
-
+    public bool isFlash = false;
     public bool isToy = false;
     public bool isBulb = false;
     public bool itemHUD = false;
@@ -23,6 +28,7 @@ public class Puzzle1 : MonoBehaviour
         manequim.SetActive(false);
         item1.SetActive(false);
         item2.SetActive(false);
+        gavetaFechada.SetActive(true);
     }
     void Update()
     {
@@ -36,6 +42,7 @@ public class Puzzle1 : MonoBehaviour
         }
         if (isToy == false)
             chave.SetActive(false);
+
     }
     public void OnTriggerStay(Collider other)
     {
@@ -53,7 +60,27 @@ public class Puzzle1 : MonoBehaviour
             isBulb = true;
             manequim.SetActive(true);
             chave.SetActive(true);
+            gavetaFechada.SetActive(false);
+            gavetaAberta.SetActive(true);
+
         }
+        if (gavetaAberta.activeSelf == true && Input.GetKeyDown("e"))
+        {
+            isFlash = true;
+            if (isFlash == true && Input.GetKeyDown("e"))
+            {
+                lanternaMao.SetActive(true);
+                lanternaGaveta.SetActive(false);
+            }
+            if (lanternaMao.activeSelf == true)
+            {
+                luzesCasa.SetActive(false);
+            }
+
+        }
+
+
+
     }
    
 }
