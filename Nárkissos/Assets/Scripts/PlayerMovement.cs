@@ -6,16 +6,15 @@ public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
 
-    
     public float speed = 12f;
     public float gravity = -9.81f;
-
     public Transform groundCheck; //referencia ao objeto groundcheck
     public float groundDistance = 0.4f; //raio da esfera que usamos para checar se esta no ch ao
     public LayerMask groundMask; //que objetos a esfera vai detectar
 
     Vector3 velocity;
     bool isGrounded; //verifica se esta no chao ou nao
+
 
     // Start is called before the first frame update
     void Start()
@@ -45,5 +44,15 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+
+       // if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.A))
+       // {
+       //     playSound.Play();
+       // }
+       // if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.A))
+       // {
+       //     playSound.Stop();
+       // }
+
     }
 }

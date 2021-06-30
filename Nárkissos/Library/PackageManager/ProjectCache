@@ -5,15 +5,15 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637598733986381208
-    m_Hash: 2705372290
+      ticks: 637606272315503789
+    m_Hash: 1465430558
   m_LockFileStatus:
     m_FilePath: "C:/Users/usu\xE1rio/Desktop/FoxTales Autoral/FoxTales_Autoral/N\xE1rkissos/Packages/packages-lock.json"
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637598735495981380
+      ticks: 637606272323200616
     m_Hash: 552259770
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}

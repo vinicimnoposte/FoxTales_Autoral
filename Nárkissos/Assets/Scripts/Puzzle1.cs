@@ -16,6 +16,8 @@ public class Puzzle1 : MonoBehaviour
     public GameObject lanternaMao;
     public GameObject luzesCasa;
 
+    public AudioSource toyMus;
+
     public bool isFlash = false;
     public bool isToy = false;
     public bool isBulb = false;
@@ -50,12 +52,14 @@ public class Puzzle1 : MonoBehaviour
         if (isToy == false && itemHUD == true && Input.GetKeyDown("e"))
         {
             toy.SetActive(true);
+            toyMus.Play();
             item1.SetActive(false);
             isToy = true;
         }
         if (isBulb == false && item2HUD == true && Input.GetKeyDown("e"))
         {
             bulb.SetActive(true);
+            toyMus.Stop();
             item2.SetActive(false);
             isBulb = true;
             manequim.SetActive(true);

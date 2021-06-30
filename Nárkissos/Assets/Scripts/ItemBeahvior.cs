@@ -21,7 +21,7 @@ public class ItemBeahvior : MonoBehaviour
 
             Jogador.GetComponent<ItemGrab>().AtivaProximoItem();
 
-            Destroy(gameObject);
+
 
         }
     }

@@ -34,6 +34,7 @@ MonoBehaviour:
   - {fileID: 1281580548354772115}
   - {fileID: -8425937990463686890}
   - {fileID: 6980902510084235823}
+  - {fileID: 5469911525617087228}
 --- !u!114 &1281580548354772115
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -126,6 +127,26 @@ MonoBehaviour:
     m_Value: 0.058
     min: 0
     max: 0.2
+--- !u!114 &5469911525617087228
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f9c493151f0d21428de9b2f38ae516e, type: 3}
+  m_Name: LowRes
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  on:
+    m_OverrideState: 1
+    m_Value: 1
+  height:
+    m_OverrideState: 1
+    m_Value: 79
 --- !u!114 &6980902510084235823
 MonoBehaviour:
   m_ObjectHideFlags: 3

@@ -54,18 +54,21 @@ public class ItemGrab : MonoBehaviour
             case 0:
 
                 item.SetActive(true);
+                itemCena.SetActive(false);
                 itemHud++;
                 break;
 
             case 1:
 
                 item2s.SetActive(true);
+                itemCena2s.SetActive(false);
                 itemHud++;
                 break;
 
             case 2:
 
                 item3s.SetActive(true);
+                itemCena3s.SetActive(false);
                 itemHud++;
                 break;
         }

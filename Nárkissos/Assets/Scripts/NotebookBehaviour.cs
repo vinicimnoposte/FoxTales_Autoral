@@ -5,8 +5,12 @@ using UnityEngine;
 public class NotebookBehaviour : MonoBehaviour
 {
     public GameObject notebook; // o notebook
-    bool noteOn; // verifica se o bloco de notas esta ativo ou nao
-    public GameObject Jogador; // o jogador
+    bool noteOn; // verifica se o bloco de notas esta ativo ou nao 
+    public GameObject Jogador; // o jogador 
+    public GameObject verItem1;
+    public GameObject verItem2;
+    public GameObject verItem3;
+    public GameObject audioCheck;
     
 
     // Start is called before the first frame update
@@ -46,19 +50,41 @@ public class NotebookBehaviour : MonoBehaviour
 
                 break;
 
-            case 1:
-                Jogador.GetComponent<ItemGrab>().item.SetActive(true);
+            case 1: 
+                if(verItem1.activeInHierarchy == false)
+                    Jogador.GetComponent<ItemGrab>().item.SetActive(true);
+                else
+                    Jogador.GetComponent<ItemGrab>().item.SetActive(false);
                 break;
 
             case 2:
-                Jogador.GetComponent<ItemGrab>().item.SetActive(true);
-                Jogador.GetComponent<ItemGrab>().item2s.SetActive(true);
-                break;
+                if (verItem2.activeInHierarchy == false)
+                {
+                    Jogador.GetComponent<ItemGrab>().item2s.SetActive(true);
+                }
+                else
+                {
+                    Jogador.GetComponent<ItemGrab>().item.SetActive(false);
+                    Jogador.GetComponent<ItemGrab>().item2s.SetActive(false);
+                }
+
+                    break;
 
             case 3:
-                Jogador.GetComponent<ItemGrab>().item.SetActive(true);
-                Jogador.GetComponent<ItemGrab>().item2s.SetActive(true);
-                Jogador.GetComponent<ItemGrab>().item3s.SetActive(true);
+                if (verItem3.activeInHierarchy == false)
+                {
+                    Jogador.GetComponent<ItemGrab>().item3s.SetActive(true);
+                }
+                else
+                {
+                    Jogador.GetComponent<ItemGrab>().item.SetActive(false);
+                    Jogador.GetComponent<ItemGrab>().item2s.SetActive(false);
+                    Jogador.GetComponent<ItemGrab>().item3s.SetActive(false);
+                }
+                if(verItem3.activeInHierarchy == false && audioCheck.activeInHierarchy == false)
+                {
+                    Jogador.GetComponent<ItemGrab>().item3s.SetActive(false);
+                }
                 break;
 
         }
