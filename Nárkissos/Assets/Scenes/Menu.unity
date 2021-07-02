@@ -1507,6 +1507,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   porta: {fileID: 268156757}
   fechada: 0
+  anim: {fileID: 0}
+  espera: 0
+  portaSom: {fileID: 0}
 --- !u!23 &268156762
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2031,6 +2034,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   porta: {fileID: 177996086}
   fechada: 1
+  anim: {fileID: 0}
+  espera: 0
+  portaSom: {fileID: 0}
 --- !u!1 &430184832
 GameObject:
   m_ObjectHideFlags: 0
@@ -2368,6 +2374,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   porta: {fileID: 470557563}
   fechada: 0
+  anim: {fileID: 0}
+  espera: 0
+  portaSom: {fileID: 0}
 --- !u!23 &470557568
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8279,7 +8288,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -287, y: -141}
+  m_AnchoredPosition: {x: -279, y: -128}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1400152461
@@ -11489,6 +11498,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   porta: {fileID: 1741845112}
   fechada: 1
+  anim: {fileID: 0}
+  espera: 0
+  portaSom: {fileID: 0}
 --- !u!64 &1741845115
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11874,6 +11886,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   porta: {fileID: 1875860424}
   fechada: 1
+  anim: {fileID: 0}
+  espera: 0
+  portaSom: {fileID: 0}
 --- !u!65 &1875860427
 BoxCollider:
   m_ObjectHideFlags: 0
