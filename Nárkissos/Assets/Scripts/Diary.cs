@@ -9,6 +9,9 @@ public class Diary : MonoBehaviour
     public GameObject[] paginas; //array para as paginas do diario
     public int pagina_atual; //em qual pagina do diario o jogador esta
     public int Permitido;
+    public GameObject verificaPuzzle2;
+    public GameObject ensinaDiario;
+    public float contaTempo;
 
     public AudioSource somFolha;
     
@@ -18,6 +21,7 @@ public class Diary : MonoBehaviour
     {
         Permitido = 1;
         pagina_atual = 0;
+        ensinaDiario.SetActive(true);
     }
 
     // Update is called once per frame
@@ -35,9 +39,21 @@ public class Diary : MonoBehaviour
         {
             paginas[i].SetActive(i == pagina_atual);
         }
-        if(Permitido == 2)
+        if(Permitido == 2 && verificaPuzzle2.activeInHierarchy == false)
         {
-            Permitido++;
+            Permitido = 3;
+        }
+        if (ensinaDiario.activeInHierarchy == true)
+        {
+            if (contaTempo < 3f)
+            {
+                contaTempo += Time.deltaTime;
+            }
+            if (contaTempo > 3f || Input.GetKeyDown(KeyCode.T))
+            {
+                ensinaDiario.SetActive(false);
+                contaTempo = 0;
+            }
         }
     }
 

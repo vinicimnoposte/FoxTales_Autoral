@@ -6,6 +6,9 @@ public class CommonDoorBhvr : MonoBehaviour
 {
     public GameObject porta;
     public bool fechada;
+    public Animator anim;
+    public float espera;
+    public AudioSource portaSom;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,17 +24,25 @@ public class CommonDoorBhvr : MonoBehaviour
 
     public void OnTriggerStay(Collider other)
     {
-        if(fechada == true && Input.GetKeyDown(KeyCode.E)) //porta abre
+        if(/*fechada == true && */ Input.GetKeyDown(KeyCode.E)) //porta abre
         {
-            porta.SetActive(false);
-            fechada = false;
+            //porta.SetActive(false);
+            StartCoroutine(portaAbre());
+            portaSom.Play();
+            //fechada = false;
+        }
+        IEnumerator portaAbre()
+        {
+            anim.SetBool("Abriu", true);
+            yield return new WaitForSeconds(espera);
+            anim.SetBool("Abriu", false);
         }
 
-      //  if (fechada == false && Input.GetKeyDown(KeyCode.E)) //porta fecha
-      //  {
-      //      porta.SetActive(true);
-      //      fechada = true;
-      //  }
+        //  if (fechada == false && Input.GetKeyDown(KeyCode.E)) //porta fecha
+        //  {
+        //      porta.SetActive(true);
+        //      fechada = true;
+        //  }
 
     }
 }

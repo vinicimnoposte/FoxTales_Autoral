@@ -53,14 +53,13 @@ public class NotebookBehaviour : MonoBehaviour
             case 1: 
                 if(verItem1.activeInHierarchy == false)
                     Jogador.GetComponent<ItemGrab>().item.SetActive(true);
-                else
-                    Jogador.GetComponent<ItemGrab>().item.SetActive(false);
                 break;
 
             case 2:
                 if (verItem2.activeInHierarchy == false)
                 {
                     Jogador.GetComponent<ItemGrab>().item2s.SetActive(true);
+                    Jogador.GetComponent<ItemGrab>().item.SetActive(false);
                 }
                 else
                 {

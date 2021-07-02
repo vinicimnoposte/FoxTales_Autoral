@@ -15,6 +15,9 @@ public class Puzzle1 : MonoBehaviour
     public GameObject lanternaGaveta;
     public GameObject lanternaMao;
     public GameObject luzesCasa;
+    public GameObject dica;
+    public GameObject dica2;
+    public GameObject dicaDiario;
 
     public AudioSource toyMus;
 
@@ -23,6 +26,8 @@ public class Puzzle1 : MonoBehaviour
     public bool isBulb = false;
     public bool itemHUD = false;
     public bool item2HUD = false;
+
+    public float contaTempo;
     void Start()
     {
         toy.SetActive(false);
@@ -43,18 +48,63 @@ public class Puzzle1 : MonoBehaviour
             item2HUD = true;
         }
         if (isToy == false)
+        {
             chave.SetActive(false);
-
+        }
+        if (dica.activeInHierarchy == true)
+        {
+            if (contaTempo < 3f)
+            {
+                contaTempo += Time.deltaTime;
+            }
+            if (contaTempo > 3f)
+            {
+                dica.SetActive(false);
+                dica2.SetActive(false);
+                contaTempo = 0;
+            }
+        }
+        if(dica2.activeInHierarchy == true)
+        {
+            if (contaTempo < 3f)
+            {
+                contaTempo += Time.deltaTime;
+            }
+            if (contaTempo > 3f || bulb.activeInHierarchy == true)
+            {
+                dica2.SetActive(false);
+                contaTempo = 0;
+            }
+        }
+        if(dicaDiario.activeInHierarchy == true)
+        {
+            if (contaTempo < 3f)
+            {
+                contaTempo += Time.deltaTime;
+            }
+            if (contaTempo > 3f || Input.GetKeyDown(KeyCode.T))
+            {
+                dicaDiario.SetActive(false);
+                contaTempo = 0;
+            }
+        }
     }
     public void OnTriggerStay(Collider other)
     {
-
+        if(isToy == false && itemHUD == false && Input.GetKeyDown(KeyCode.E))
+        {
+            dica.SetActive(true);
+        }
         if (isToy == false && itemHUD == true && Input.GetKeyDown("e"))
         {
             toy.SetActive(true);
             toyMus.Play();
             item1.SetActive(false);
             isToy = true;
+        }
+        if(isToy == true && Input.GetKeyDown(KeyCode.E) && isBulb == false)
+        {
+            dica2.SetActive(true);
         }
         if (isBulb == false && item2HUD == true && Input.GetKeyDown("e"))
         {
@@ -80,11 +130,7 @@ public class Puzzle1 : MonoBehaviour
             {
                 luzesCasa.SetActive(false);
             }
-
+            dicaDiario.SetActive(true);
         }
-
-
-
-    }
-   
+    } 
 }

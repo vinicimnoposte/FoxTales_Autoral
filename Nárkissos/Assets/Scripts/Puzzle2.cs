@@ -9,6 +9,7 @@ public class Puzzle2 : MonoBehaviour
     public GameObject radio;
    
     public AudioSource agua;
+    public AudioSource magoCair;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,8 @@ public class Puzzle2 : MonoBehaviour
         if (garrafaHUD.activeSelf == true && Input.GetKeyDown("e"))
         {
             triggerBox.SetActive(true);
- 
+            magoCair.Play();
+
 
 
         }

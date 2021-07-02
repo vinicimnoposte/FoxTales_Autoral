@@ -57,7 +57,7 @@ public class TrocaEquip : MonoBehaviour
             msgAlternaEquip.SetActive(false);
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse1))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             avisoTiro.SetActive(true);       
             shotWarning = true;  

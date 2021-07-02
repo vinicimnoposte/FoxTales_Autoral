@@ -12,6 +12,7 @@ public class Puzzle4 : MonoBehaviour
     public bool tempo;
     public float timeRemaining = 30;
     public GameObject Timing;
+    public GameObject msgSacrifice;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,8 +30,9 @@ public class Puzzle4 : MonoBehaviour
             
             if (timeRemaining > 0)
             {
+                msgSacrifice.SetActive(true);
                 timeRemaining -= Time.deltaTime;
-                 Timing.GetComponent<TextMeshProUGUI>().text = "" + (int) timeRemaining; //o componente texto do objeto do texto e' tempo restante
+                Timing.GetComponent<TextMeshProUGUI>().text = "" + (int) timeRemaining; //o componente texto do objeto do texto e' tempo restante
             }
             else
             {
