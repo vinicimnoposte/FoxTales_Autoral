@@ -17,7 +17,7 @@ public class Apagao : MonoBehaviour
       //  luzesCasa.SetActive(false);
         tempo += Time.deltaTime;
         contatempo = true;
-        equips.SetActive(true);
+       // equips.SetActive(true);
     }
 
     // Update is called once per frame
@@ -27,7 +27,7 @@ public class Apagao : MonoBehaviour
         {
             luzesCasa.SetActive(false);
  
-            equips.SetActive(false);
+           // equips.SetActive(false);
             if (luzesCasa.activeSelf == false && podeTocar == true)
             {
                 interruptor.Play();

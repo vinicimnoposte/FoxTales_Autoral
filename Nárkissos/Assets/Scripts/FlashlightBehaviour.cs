@@ -28,8 +28,8 @@ public class FlashlightBehaviour : MonoBehaviour
             //intensidade = Mathf.Lerp(curdist, dist, 0.1f);
             if(dist > 3)       
                 flashlight.GetComponent<Light>().intensity = 5;
-            if (dist <= 3)
-                flashlight.GetComponent<Light>().intensity = 1.5f;
+           // if (dist <= 3)
+           //     flashlight.GetComponent<Light>().intensity = 1.5f;
            // Debug.Log(dist);   //quao mais distante o objeto da lampada, mais intensa a luz fica
         } 
     }
